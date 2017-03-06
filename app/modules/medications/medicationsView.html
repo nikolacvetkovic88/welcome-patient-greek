@@ -1,0 +1,50 @@
+<div class="row">
+	<button class="btn btn-info pull-right btn-sm refresh" ng-click="refresh()">
+	  <span class="glyphicon glyphicon-refresh"></span>
+	</button>
+</div>
+
+<div class="form-group">
+    <p class=text-info>Αυτή είναι η φαρμακευτική αγωγή που σας έχει χορηγηθεί. Παρακαλώ επικοινωνήστε με το γιατρό σας σε περίπτωση που χρειάζεστε περαιτέρω πληροφορίες.
+    </p>
+</div>
+
+<div class="container-fluid">
+	<div class="form-group">
+		<label for="search">Αναζήτηση:</label>
+	    <input type="search" name="name" id="search" value="" placeholder="Αναζήτηση φαρμάκων" class="form-control" ng-model="filter" />
+	</div>
+	<div class="btn-group-vertical" style="width: 100%" ng-repeat="medication in medications | filter: filter">
+		<button type="button" class="btn btn-info text-left" data-toggle="collapse" data-target="#{{medication.cloudRef}}"><span class="glyphicon glyphicon-sort"></span>&nbsp{{medication.medication}}</button>
+		<div id="{{medication.cloudRef}}" class="collapse in">
+			<table class="table table-condensed">
+			    <thead>
+			        <tr>
+			            <th>Κωδικός</th>
+			            <th>Ποσότητα</th>
+			            <th>Σημείωση</th>
+			            <th>Έναρξη(από)</th>
+			            <th>Λήξη(έως)</th>
+			            <th>Συχνότητα(φορές την ημέρα)</th>
+			            <th>Περίοδος(κάθε πόσο)</th>
+			            <th>Μονάδα μεριόδου(μέρα/εβδομάδα/έτος)</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr>
+			            <td>{{medication.code}}></td>
+			            <td>{{medication.quantity}}</td>
+			            <td>{{medication.note}}</td>
+			            <td>{{medication.periodStart}}</td>
+			            <td>{{medication.periodEnd}}</td>
+			            <td>{{medication.frequency}}</td>
+			            <td>{{medication.period}}</td>
+			            <td>{{medication.periodUnit}}</td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="loader" ng-show="loading"></div>

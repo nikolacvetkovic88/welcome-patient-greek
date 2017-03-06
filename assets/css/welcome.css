@@ -1,0 +1,139 @@
+body {
+  font-size: 17px !important;
+}
+
+/* overriding calendar */
+.fc-toolbar h2 {
+  color: #F07822;
+}
+
+button.fc-state-default{
+  background: #00AEEF;
+  color: white;
+}
+
+button.fc-state-active, button.fc-state-hover  {
+  background: #F07822;
+  color: white;
+  border-color: #F07822;
+  outline-style: none;
+}
+
+/* end of overriding calendar */
+
+/* overriding bootstrap select */
+
+.dropdown-menu.open{
+  max-width: 100%;
+}
+
+/* end of overriding bootstrap select */
+
+/* weather plugin */
+
+.weather-description, .weather-box {
+  padding: 0 !important;
+}
+
+.weather-temperature {
+  font-weight: bold;
+}
+
+.weather-item {
+  padding: 0;
+  font-size: 14px;
+}
+
+/*  end of weather plugin */
+
+.main-content {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 0;
+}
+
+.module-icons {
+  display: none;
+  margin-top: 35px;
+  border-radius: 15px;
+  width: 150px;
+  height: 150px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  margin-top: 5px;
+}
+
+.patient-name {				
+  color: #00AEEF;		
+}
+
+.logout {
+  color: #00AEEF;
+  font-size: 14px;
+}
+
+.content-menu {
+  position: fixed;
+}
+
+.education-content{
+  margin-left: 10px;
+}
+
+.education-link{
+  cursor: pointer;
+}
+
+.diary-info-desc {
+  height: 30px;
+}
+
+.selected-item, .selected-item * {
+  color: white !important;
+  background-color: #F07822 !important;
+  border-color: #F07822;
+}
+
+.navigation-bar {
+  margin-bottom: 5px;
+}
+
+.btn-label {
+  background-color: #fff;
+  border-color: #ccc
+}
+
+.btn-label.active  {
+  background-color: #337ab7;
+  border-color: #2e6da4; 
+  color: white;
+}
+
+.loader {
+  background: rgba(0, 0, 0, 0.8) url("images/loading.gif") no-repeat center center;
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.st-sort-ascent:before{
+ content: '\25B2';
+}
+
+.st-sort-descent:before{
+ content: '\25BC';
+}
+
+.transparent {
+  background-color: white !important;
+}
+
+.refresh {
+  margin-bottom: 10px;
+}

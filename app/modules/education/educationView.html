@@ -1,0 +1,13 @@
+<button class="btn btn-info pull-right btn-sm refresh" ng-click="refresh()">
+  <span class="glyphicon glyphicon-refresh"></span>
+</button>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-info" ng-repeat="program in programs track by $index">
+            <div class="panel-heading">{{program}}</div>
+        </div>
+     </div>
+</div>
+
+<div class="loader" ng-show="loading"></div>
