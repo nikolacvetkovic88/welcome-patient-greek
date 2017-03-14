@@ -24,15 +24,16 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-touch-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon-180x180.png">
 
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="assets/css/normalize.css" />
 	<link rel="stylesheet" href="assets/css/welcome.css" />
 	<link rel="stylesheet" href='assets/css/fullcalendar.min.css' />
 	<link rel="stylesheet" href="assets/css/bootstrap-notify.css" />
 	<link rel="stylesheet" href="assets/css/select2.css" />
 	<link rel="stylesheet" href="assets/css/select2-bootstrap.css" />
-	<link rel="stylesheet" href="assets/css/weather.css">
+	<link rel="stylesheet" href="assets/css/weather.css" />
 
 	<script src="assets/libs/jquery-3.1.0.min.js"></script>
 	<script src="assets/libs/bootstrap.min.js"></script>
@@ -49,8 +50,8 @@
 	<script src="assets/libs/calendar.js"></script>
 	<script src="assets/libs/fullcalendar.min.js"></script>
 	<script src="assets/libs/gcal.js"></script>
-	<script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+	<!--<script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>-->
 	<script src="assets/libs/highcharts-ng.js"></script>
 	<script src="assets/libs/ng-videosharing-embed.min.js"></script>
 	<script src="assets/libs/n3-browserify.js"></script>
@@ -61,7 +62,7 @@
     <script src="assets/js/helperFunctions.js"></script>
 	<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 	<script type="text/javascript">
-	    window.cookieconsent_options = {"message":"This application uses cookies","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"dark-bottom"};
+	    window.cookieconsent_options = {"message":"Αυτή η εφαρμογή χρησιμοποιεί cookies","dismiss":"Το κατάλαβα!","learnMore":"Περισσότερες πληροφορίες","link":null,"theme":"dark-bottom"};
 	</script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
 	<!-- End Cookie Consent plugin -->
@@ -107,9 +108,9 @@
 							        <span class="glyphicon glyphicon-menu-hamburger"></span>
 							    </button>
 							    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-							      <li class="dropdown-header">Set Reminders</li>
-							      <li role="presentation" ng-click="setReminders(3600000)" ng-class="{'selected-item': reminderInterval == 3600000}"><a role="menuitem" tabindex="-1" href="">Every hour</a></li>
-							      <li role="presentation" ng-click="setReminders(900000)" ng-class="{'selected-item': reminderInterval == 900000}"><a role="menuitem" tabindex="-1" href="">Every 15 minutes</a></li>		
+							      <li class="dropdown-header">Ορίστε υπενθυμίσεις</li>
+							      <li role="presentation" ng-click="setReminders(3600000)" ng-class="{'selected-item': reminderInterval == 3600000}"><a role="menuitem" tabindex="-1" href="">Κάθε ώρα</a></li>
+							      <li role="presentation" ng-click="setReminders(900000)" ng-class="{'selected-item': reminderInterval == 900000}"><a role="menuitem" tabindex="-1" href="">Κάθε 15 λεπτά</a></li>		
 							      <li role="presentation"  ng-click="disableReminders()" ng-class="{'selected-item': reminderInterval == -1 }"><a role="menuitem" tabindex="-1" href="">Κλειστό</a></li>
 							      <li class="divider"></li>
 							    </ul>
@@ -133,12 +134,12 @@
 							</div>
 							<div class="weather-box text-info">
 								<ul class="weather-info" id="weather-info">
-									<li class="weather-item">Humidity: <span id="humidity"></span>%</li>
-									<li class="weather-item">Wind: <span id="wind-direction"></span> <span id="wind"></span><span id="speed-unit"></span></li>
+									<li class="weather-item">Υγρασία: <span id="humidity"></span>%</li>
+									<li class="weather-item">Άνεμος: <span id="wind-direction"></span> <span id="wind"></span><span id="speed-unit"></span></li>
 								</ul>
 							</div>
 						</div>
-						 <div id="geo-error-message" class="geo-error-message hide"><button id='close-error' class='fa fa-times close-error'></button>It looks like we can't find your location. Please type your city into the search box above!</div>
+						 <div id="geo-error-message" class="geo-error-message hide"><button id='close-error' class='fa fa-times close-error'></button>Φαίνεται να μην μπορούμε να βρούμε την τοποθεσία σας. Παρακαλώ καταχωρήστε την πόλυ σας στο παραπάνω πεδίο αναζήτησης!</div>
 					</div>	
 				</div>
 			</div>
@@ -148,10 +149,10 @@
 
 		<nav class="nav navbar-inverse navigation-bar ng-hide" ng-show="showMainContent && !isHomePage">
 		  <ul class="nav navbar-nav">
-		    <li><a href="#home" data-icon="home"><span class="glyphicon glyphicon-home" ng-click="$route.reload()"></span>Home</a></li>    
+		    <li><a href="#home" data-icon="home"><span class="glyphicon glyphicon-home" ng-click="$route.reload()"></span>Αρχική</a></li>    
 		    <li><a href="patienthub://app" data-icon="clock"><span class="glyphicon glyphicon-time"></span>Μέτρηση</a></li>   
 		    <li><a href="#questionnaires" data-icon="edit"><span class="glyphicon glyphicon-pencil"></span>Ερωτηματολόγια</a></li>    
-		    <li><a href="#education" data-icon="info"><span class="glyphicon glyphicon-info-sign"></span>Εκπαιδευτικό υλικό</a></li>    
+		    <!--<li><a href="#education" data-icon="info"><span class="glyphicon glyphicon-info-sign"></span>Εκπαιδευτικό υλικό</a></li>-->    
 		    <li><a href="#comments" data-icon="comment"><span class="glyphicon glyphicon-blackboard"></span>Σχόλια</a></li>     
 		    <li><a href="#diary" data-icon="calendar"><span class="glyphicon glyphicon-calendar"></span>Ημερολόγιο</a></li>   
 		    <li><a href="#medications" data-icon="plus"><span class="glyphicon glyphicon-plus-sign"></span>Φαρμακευτική αγωγή</a></li>   

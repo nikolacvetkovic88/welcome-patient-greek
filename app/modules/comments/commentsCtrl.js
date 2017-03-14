@@ -2,11 +2,10 @@ app.controller('commentsCtrl', function($scope, $rootScope, $q, commentsReposito
 	$scope.$emit('body:class:add', "transparent");
 	$scope.patientId = $rootScope.patient ? $rootScope.patient.user.cloudRef : null;
 	$scope.hcps = $rootScope.patient ? $rootScope.patient.doctors : [];
-	$scope.hcp = null;
-	$scope.type = "current";
+	$scope.hcp = $scope.hcps ? $scope.hcps[0] : null;
 	$scope.message = null;
 	$scope.messages = [];
-	$scope.myself = "Me";
+	$scope.myself = "Εγώ";
 	$scope.offset = 0;
 	$scope.limit = 20;
 	$scope.token = AccountService.getToken();
@@ -86,7 +85,7 @@ app.controller('commentsCtrl', function($scope, $rootScope, $q, commentsReposito
 
 			var sender = $.grep($scope.hcps, function(hcp) { return hcp.cloudRef == hcpRef; })[0];
 
-			return sender ? sender.specialty + " " + sender.firstName + " " + sender.lastName : "Unknown HCP";
+			return sender ? sender.specialty + " " + sender.firstName + " " + sender.lastName : "Άγνωστος ιατρός";
 	    } else {
 	    	return $scope.myself;
 	    }
@@ -96,11 +95,6 @@ app.controller('commentsCtrl', function($scope, $rootScope, $q, commentsReposito
 		return  "?q=res,like," + $scope.hcp.cloudRef + "&q=res,like," + $scope.patientId +
 				"&q=Communication.sent,sortOnly,desc" +
 				"&offset=" + $scope.offset + "&limit=" + $scope.limit;
-	}
-
-	$scope.setType = function(type) {
-		$scope.message = null;
-		$scope.type = type;
 	}
 
 	$scope.postMessage= function() {
@@ -119,8 +113,7 @@ app.controller('commentsCtrl', function($scope, $rootScope, $q, commentsReposito
     	return commentsRepository.postMessage($scope.patientId, patientUrl, hcpUrl, $scope.message, $scope.token)
     	.then(function() {
 			helper.notify('Το σχόλιό σας έχει καταγραφεί!', 'success');
-			$scope.type = "current";
-			$scope.loadMessages();
+			$scope.refresh();
 		});
 	}
 
