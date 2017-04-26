@@ -1,4 +1,4 @@
-app.controller('questionnairesCtrl', function($scope, $rootScope, $q, questionnairesRepository, helper, AccountService) {
+app.controller('questionnairesCtrl', function($scope, $rootScope, $q, localStorageService, questionnairesRepository, helper, AccountService) {
 	$scope.$emit('body:class:add', "transparent");
 	$scope.patientId = $rootScope.patient ? $rootScope.patient.user.cloudRef : null;
 	$scope.token = AccountService.getToken();

@@ -280,8 +280,7 @@ app.factory('ReminderService', function ($rootScope, $q, $cookieStore, diaryRepo
     this.checkReminders = function() {
         var todayReminders = [],
             tomorrowReminders = [],
-            todayMessage = "",
-            tomorrowMessage = "";
+            message = "";
 
         angular.forEach(self.questionnaires, function(reminder, i) {
             var questionnaireReminder = self.checkReminder(reminder.start);
@@ -293,17 +292,6 @@ app.factory('ReminderService', function ($rootScope, $q, $cookieStore, diaryRepo
             }
         });
 
-        if(todayReminders.length) {
-            todayMessage += todayReminders.toString() + ".<br/>";
-        }
-
-        if(tomorrowReminders.length) {
-            tomorrowMessage += tomorrowReminders.toString() + ".<br/>";
-        }
-
-        todayReminders.length = 0;
-        tomorrowReminders.length = 0;
-
         angular.forEach(self.appointments, function(reminder, i) {
             var appointmentReminder = self.checkReminder(reminder.start);
             if(appointmentReminder.isToday) {
@@ -313,17 +301,6 @@ app.factory('ReminderService', function ($rootScope, $q, $cookieStore, diaryRepo
                 tomorrowReminders.push(reminder.fullTitle + " λόγω αύριο στις " + helper.formatTimeForUser(new Date(reminder.start)));
             }
         });
-
-        if(todayReminders.length) {
-            todayMessage += todayReminders.toString() + ".<br/>";
-        }
-
-        if(tomorrowReminders.length) {
-            tomorrowMessage += tomorrowReminders.toString() + ".<br/>";
-        }
-
-        todayReminders.length = 0;
-        tomorrowReminders.length = 0;
 
         angular.forEach(self.medications, function(reminder, i) {
             var medicationReminder = self.checkReminder(reminder.start);
@@ -335,17 +312,6 @@ app.factory('ReminderService', function ($rootScope, $q, $cookieStore, diaryRepo
             }
         });
 
-        if(todayReminders.length) {
-            todayMessage += todayReminders.toString() + ".<br/>";
-        }
-
-        if(tomorrowReminders.length) {
-            tomorrowMessage += tomorrowReminders.toString() + ".<br/>";
-        }
-
-        todayReminders.length = 0;
-        tomorrowReminders.length = 0;
-
         angular.forEach(self.measurements, function(reminder, i) {
             var measurementReminder = self.checkReminder(reminder.start);
             if(measurementReminder.isToday) {
@@ -356,16 +322,18 @@ app.factory('ReminderService', function ($rootScope, $q, $cookieStore, diaryRepo
             }
         });
 
-        if(todayReminders.length) {
-            todayMessage += todayReminders.toString() + ".<br/>";
-        }
+        angular.forEach(todayReminders, function(reminder) {
+            message += "<p>" + reminder + "</p>";
+        });
 
-        if(tomorrowReminders.length) {
-            tomorrowMessage += tomorrowReminders.toString() + ".<br/>";
-        }
-      
-        var message = todayMessage + '\r\n' + tomorrowMessage;
-        if(todayMessage || tomorrowMessage)
+        if(message)
+            message += "<hr />";
+
+        angular.forEach(tomorrowReminders, function(reminder) {
+            message += "<p>" + reminder + "</p>";
+        });
+        
+        if(message)
             bootbox.alert("<div class='text-info'>" + message + "</div>");
     }
 
@@ -439,14 +407,14 @@ app.factory('ReminderService', function ($rootScope, $q, $cookieStore, diaryRepo
     this.parseQuestionnaires = function(data) {
         var parsedData = [];
         angular.forEach(data, function(value, key) {
-          var dates = self.parseDates(value);
-          angular.forEach(dates, function(date) {
-            var parsedObject = {};
-            parsedObject.title = value.questionnaire;
-            parsedObject.fullTitle = "Ερωτηματολόγια " + value.questionnaire;
-            parsedObject.start = date;
-            parsedData.push(parsedObject);
-          });
+            var dates = self.parseDates(value);
+            angular.forEach(dates, function(date) {
+                var parsedObject = {};
+                parsedObject.title = value.questionnaire;
+                parsedObject.fullTitle = "Ερωτηματολόγια " + value.questionnaire;
+                parsedObject.start = date;
+                parsedData.push(parsedObject);
+            });
         });
 
         return parsedData;
@@ -457,7 +425,7 @@ app.factory('ReminderService', function ($rootScope, $q, $cookieStore, diaryRepo
 
         angular.forEach(data, function(value, key) {
             var parsedObject = {};
-            parsedObject.title - value.comment;
+            parsedObject.title = value.comment;
             parsedObject.fullTitle = "Ραντεβού " + value.comment + " με " + hcpData[key].specialty + " " + hcpData[key].user.firstName + " " + hcpData[key].user.lastName + " - " + value.status;
             parsedObject.start = moment(value.periodStart);
             parsedData.push(parsedObject);
@@ -469,30 +437,35 @@ app.factory('ReminderService', function ($rootScope, $q, $cookieStore, diaryRepo
     this.parseMedications = function(data) {
         var parsedData = [];
         angular.forEach(data, function(value, key) {
-          var dates = self.parseDates(value);
-          angular.forEach(dates, function(date) {
-            var parsedObject = {};
-            parsedObject.title = value.medication;
-            parsedObject.fullTitle = "Φαρμακευτική αγωγή " + value.medication;
-            parsedObject.start = date;
-            parsedData.push(parsedObject);
-          });
+            var dates = self.parseDates(value);
+            angular.forEach(dates, function(date) {
+                var parsedObject = {};
+                parsedObject.title = value.medication;
+                parsedObject.fullTitle = "Φαρμακευτική αγωγή " + value.medication;
+                parsedObject.start = date;
+                parsedData.push(parsedObject);
+            });
         });
 
         return parsedData;
     }
 
     this.parseDevices = function(data) {
-        var parsedData = [];
+        var parsedData = [],
+            devices = $rootScope.patient && $rootScope.patient.devices;
+
         angular.forEach(data, function(value, key) {
-          var dates = self.parseDates(value);
-          angular.forEach(dates, function(date) {
-            var parsedObject = {};
-            parsedObject.title = value.device;
-            parsedObject.fullTitle = "Μέτρηση " + value.device;
-            parsedObject.start = date;
-            parsedData.push(parsedObject);
-          });
+            var dates = self.parseDates(value),
+                device = $.grep(devices, function(device) { return device.cloudRef == value.device; })[0],
+                type = device && device.type;
+
+            angular.forEach(dates, function(date) {
+                var parsedObject = {};
+                parsedObject.title = type;
+                parsedObject.fullTitle = "Μέτρηση " + type;
+                parsedObject.start = date;
+                parsedData.push(parsedObject);
+            });
         });
 
         return parsedData;
