@@ -109,7 +109,7 @@ app.controller('commentsCtrl', function($scope, $rootScope, $q, commentsReposito
     	var patientUrl = helper.baseUrl + '/Patient/' + $scope.patientId,
     		hcpUrl = helper.baseUrl + '/' + $scope.hcp.specialty + '/' + $scope.hcp.cloudRef;
 
-    	return commentsRepository.postMessage($scope.patientId, patientUrl, hcpUrl, $scope.message, $scope.token)
+    	return commentsRepository.postMessage(patientUrl, hcpUrl, $scope.message, $scope.token)
     	.then(function() {
 			helper.notify('Το σχόλιό σας έχει καταγραφεί!', 'success');
 			$scope.refresh();

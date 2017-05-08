@@ -62,6 +62,8 @@ app.controller('questionnairesCtrl', function($scope, $rootScope, $q, localStora
 	$scope.mergeData = function(questionnaires) {
 		var questionnaireIds = $.map(questionnaires, function(questionnaire) { return questionnaire.id; });
 		$scope.assignedQuestionnaires = $.grep($scope.staticQuestionnaires, function(questionnaire) { return questionnaireIds.indexOf(questionnaire.id) != -1 });
+		if($scope.assignedQuestionnaires.length)
+			$scope.setSelectedQuestionnaire($scope.assignedQuestionnaires[0]);
 	}
 
 	$scope.setSelectedQuestionnaire = function(questionnaire) {

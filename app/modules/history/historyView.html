@@ -1,0 +1,30 @@
+<div class="row">
+  <button class="btn btn-info pull-right btn-sm refresh" ng-click="refresh()">
+    <span class="glyphicon glyphicon-refresh"></span>
+  </button>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-3">
+			<ul class="list-group">
+				<li class="list-group-item history-item" ng-click="loadBloodPressureData()" ng-class="{'selected-item': selected == 1}">Blood Pressure</li>
+				<li class="list-group-item history-item" ng-click="loadWeightData()" ng-class="{'selected-item': selected == 2}">Weight</li>
+				<li class="list-group-item history-item" ng-click="loadBloodGlucoseData()" ng-class="{'selected-item': selected == 3}">Blood Glucose</li>
+				<li class="list-group-item history-item" ng-click="loadTemperatureData()" ng-class="{'selected-item': selected == 4}">Temperature</li>
+				<li class="list-group-item history-item" ng-click="loadSpirometerData()" ng-class="{'selected-item': selected ==  5}">Spirometer</li>
+				<li class="list-group-item history-item" ng-click="loadExacerbationsData()" ng-class="{'selected-item': selected ==  6}">Number of execerbations</li>
+				<li class="list-group-item history-item" ng-click="loadHospitalAdmissionsData()" ng-class="{'selected-item': selected ==  7}">Number of hospital admissions</li>
+				<li class="list-group-item history-item" ng-click="loadCigarettesSmokedData()" ng-class="{'selected-item': selected ==  8}">Number of cigarettes smoked</li>
+				<li class="list-group-item history-item" ng-click="loadMedicationAdherenceData()" ng-class="{'selected-item': selected ==  9}">Medication adherence</li>
+				<li class="list-group-item history-item" ng-click="loadOedemaData()" ng-class="{'selected-item': selected ==  10}">Signs of oedema</li>
+				<li class="list-group-item history-item" ng-click="loadMoodData()" ng-class="{'selected-item': selected ==  11}">Mood</li>
+				<li class="list-group-item history-item" ng-click="loadPhysicalActivitiesData()" ng-class="{'selected-item': selected ==  12}">Physical Activity</li>
+			</ul>
+		</div>
+		<div class="col-sm-9">
+		</div>
+	</div>
+
+	<div class="loader" ng-show="loading"></div>
+</div>

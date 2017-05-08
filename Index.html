@@ -39,7 +39,6 @@
 	<script src="assets/libs/bootstrap.min.js"></script>
 	<script src="assets/libs/angular.min.js"></script>
 	<script src="assets/libs/angular-route.min.js"></script>
-	<script src="assets/libs/angular-cookies.min.js"></script>
 	<script src="assets/libs/angular-local-storage.js"></script>
 	<script src="assets/libs/angular-base64.js"></script>
 	<script src="assets/libs/bootbox.min.js"></script>
@@ -97,8 +96,8 @@
 							<div class="input-group">
 								<input id="search-location-input" class="form-control" type="text" placeholder="Πρόβλεψη καιρού" ng-disabled="!isHomePage">
 								<span class="input-group-btn">
-									<button id="search-location-button" class="btn btn-info" title="Show weather for specific location" ng-disabled="!isHomePage"><span class="glyphicon glyphicon-search"></span></button>
-									<button id="geo-button" class="btn btn-info" title="Show weather for current location" ng-disabled="!isHomePage"><span class="glyphicon glyphicon-screenshot"></span></button>
+									<button id="search-location-button" class="btn btn-info" title="Εμφάνιση του καιρού για συγκεκριμένη τοποθεσία" ng-disabled="!isHomePage"><span class="glyphicon glyphicon-search"></span></button>
+									<button id="geo-button" class="btn btn-info" title="Εμφάνιση καιρού για την τρέχουσα τοποθεσία" ng-disabled="!isHomePage"><span class="glyphicon glyphicon-screenshot"></span></button>
 								</span>
 							</div>
 						</div>
@@ -155,7 +154,8 @@
 		    <li ng-if="moduleVisible('Education')"><a href="#education" data-icon="info"><span class="glyphicon glyphicon-info-sign"></span>Εκπαιδευτικό υλικό</a></li>    
 		    <li ng-if="moduleVisible('Comments')"><a href="#comments" data-icon="comment"><span class="glyphicon glyphicon-blackboard"></span>Σχόλια</a></li>     
 		    <li ng-if="moduleVisible('Diary')"><a href="#diary" data-icon="calendar"><span class="glyphicon glyphicon-calendar"></span>Ημερολόγιο</a></li>   
-		    <li ng-if="moduleVisible('Medication')"><a href="#medications" data-icon="plus"><span class="glyphicon glyphicon-plus-sign"></span>Φαρμακευτική αγωγή</a></li>   
+		    <li ng-if="moduleVisible('Medication')"><a href="#medications" data-icon="plus"><span class="glyphicon glyphicon-plus-sign"></span>Φαρμακευτική αγωγή</a></li>  
+		    <li ng-if="moduleVisible('History')"><a href="#history" data-icon="heart"><span class="glyphicon glyphicon-heart"></span>ιστορία</a></li> 
 		  </ul>
 		</nav>
 		<div ng-view></div>
@@ -178,6 +178,8 @@
 	<script src="app/modules/education/educationCtrl.js"></script>
 	<script src="app/modules/questionnaires/dataService.js"></script>
 	<script src="app/modules/questionnaires/questionnairesCtrl.js"></script>
+	<script src="app/modules/history/dataService.js"></script>
+	<script src="app/modules/history/historyCtrl.js"></script>
 	<script src="assets/libs/weather.js"></script>	
 </body>
 </html>
