@@ -4,7 +4,7 @@
     		"type": "uri",
     		"value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_COPDAssessmentTest",
     		"id": "Questionnaire_COPDAssessmentTest",
-            "name": "COPD Assessment Test",
+            "name": "Τεστ Αξιολόγησης για την ΧΑΠ  (CAT)",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -147,7 +147,7 @@
 	        	    	},
 	        	    	"question_text": {
 	        	    		"type": "literal",
-	        	    		"value": "I have no  phlegm (mucus) in my chest at all --- My chest is completely full of phlegm",
+	        	    		"value": "I have no phlegm (mucus) in my chest at all --- My chest is completely full of phlegm",
 	        	    		"name": "Δεν έχω καθόλου φλέγμα(βλέννα) στο στήθος --- Το στήθος μου είναι εντελώς",
 	        	    		"xml:lang": "gr"
 	        	    	},
@@ -882,7 +882,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_8",
             "id": "Questionnaire_DSQ_8",
-            "name": "Daily Questionnaire 8",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 8",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -970,7 +970,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_1",
             "id": "Questionnaire_DSQ_1",
-            "name": "Daily Questionnaire 1",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 1",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -1058,7 +1058,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_6",
             "id": "Questionnaire_DSQ_6",
-            "name": "Daily Questionnaire 6",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 6",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -1146,7 +1146,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_Physical_Activities",
             "id": "Questionnaire_Physical_Activities",
-            "name": "Physical Activities",
+            "name": "φυσικής δραστηριότητας",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -1428,7 +1428,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_SmokingCessation",
             "id": "Questionnaire_SmokingCessation",
-            "name": "Smoking Cessation",
+            "name": "Ερωτήσεις σχετικές με τη διακοπή καπνίσματος",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -1497,7 +1497,7 @@
 	                    "question": {
 	                        "type": "uri",
 	                        "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Question_sc_q2",
-	                        "id": "Question_sc_q1",
+	                        "id": "Question_sc_q2",
 	                        "name": "sc_q2"
 	                    },
 	                    "question_gravity": {
@@ -1779,7 +1779,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_16",
             "id": "Questionnaire_DSQ_16",
-            "name": "Daily Questionnaire 16",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 16",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -1851,10 +1851,10 @@
     		"type": "uri",
     		"value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_FatigueSeverityScale",
     		"id": "Questionnaire_FatigueSeverityScale",
-            "name": "Fatigue Severity Scale",
+            "name": "ερωτηματολόγιο FSS",
             "questionGroups": [{
 	    		"type": "literal",
-	            "value": "Answer with 1-5 (Disagree - Agree) , a low value (e.g., 1) indicates strong disagreement with the statement, whereas a high value (e.g., 5) indicates strong agreement. During the past week, I have found that:",
+	            "value": "Απαντήστε με 1 έως 5 (Διαφωνώ - Συμφωνώ), μια χαμηλή τιμή (για παράδειγμα 1) υποδεικνύει ότι διαφωνείτε έντονα με τη δήλωση, ενώ μια υψηλή τιμή υποδεικνύει ότι συμφωνείτε έντονα.",
 	        	"xml:lang": "gr",
 	        	"id": "QuestionsGroup_FatiqueSeverityScale",
 	        	"questions": [
@@ -2819,7 +2819,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_13",
             "id": "Questionnaire_DSQ_13",
-            "name": "Daily Questionnaire 13",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 13",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -2907,7 +2907,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_9",
             "id": "Questionnaire_DSQ_9",
-            "name": "Daily Questionnaire 9",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 9",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -2995,7 +2995,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_11",
             "id": "Questionnaire_DSQ_11",
-            "name": "Daily Questionnaire 11",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 11",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -3083,7 +3083,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_7",
             "id": "Questionnaire_DSQ_7",
-            "name": "Daily Questionnaire 7",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 7",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -3171,7 +3171,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_4",
             "id": "Questionnaire_DSQ_4",
-            "name": "Daily Questionnaire 4",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 4",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -3259,7 +3259,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_2",
             "id": "Questionnaire_DSQ_2",
-            "name": "Daily Questionnaire 2",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 2",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -3347,7 +3347,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_14",
             "id": "Questionnaire_DSQ_14",
-            "name": "Daily Questionnaire 14",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 14",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -3385,7 +3385,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_12",
             "id": "Questionnaire_DSQ_12",
-            "name": "Daily Questionnaire 12",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 12",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -3473,7 +3473,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_5",
             "id": "Questionnaire_DSQ_5",
-            "name": "Daily Questionnaire 5",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 5",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -3561,10 +3561,10 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_HospitalAnxietyAndDepressionScale",
             "id": "Questionnaire_HospitalAnxietyAndDepressionScale",
-            "name": "Hospital Anxiety And Depression Scale",
+            "name": "ερωτηματολόγιο HADS",
             "questionGroups": [{
 	    		"type": "literal",
-	            "value": "Anxiety related questions",
+	            "value": "Ερωτήσεις σχετικές με το άγχος",
 	        	"xml:lang": "gr",
 	        	"id": "QuestionsGroup_HospitalAnxietyAndDepressionScale",
 	            "questions": [
@@ -5115,7 +5115,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_FagerstromToleranceQuestionnaire",
             "id": "Questionnaire_FagerstromToleranceQuestionnaire",
-            "name": "Fagerstrom Tolerance",
+            "name": "Κλίμακα Fagerstrom για την εξάρτηση από νικοτίνη",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -5591,7 +5591,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_MMRC",
             "id": "Questionnaire_MMRC",
-            "name": "MMRC",
+            "name": "ερωτηματολόγιο mMRC",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -5736,7 +5736,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_3",
             "id": "Questionnaire_DSQ_3",
-            "name": "Daily Questionnaire 3",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 3",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -5824,7 +5824,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_10",
             "id": "Questionnaire_DSQ_10",
-            "name": "Daily Questionnaire 10",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 10",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -5862,7 +5862,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_DSQ_15",
             "id": "Questionnaire_DSQ_15",
-            "name": "Daily Questionnaire 15",
+            "name": "Ερωτήσεις σχετικές με την πάθησή σας 15",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",
@@ -5900,7 +5900,7 @@
             "type": "uri",
             "value": "http://lomi.med.auth.gr/ontologies/WELCOME_entities#Questionnaire_MalnutritionUniversalScreeningTool",
             "id": "Questionnaire_MalnutritionUniversalScreeningTool",
-            "name": "Malnutrition Universal Screening Tool",
+            "name": "ερωτηματολόγιο MUST",
             "questionGroups": [{
 	    		"type": "literal",
 	            "value": "",

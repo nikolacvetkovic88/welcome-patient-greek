@@ -76,7 +76,7 @@ app.controller('commentsCtrl', function($scope, $rootScope, $q, commentsReposito
             return data.sort(function (a, b) {
                 return new Date(b.dateSent).getTime() - new Date(a.dateSent).getTime()
             });
-    };
+    }
 
 	$scope.getSender = function(senderRef) {
 		if(senderRef.indexOf("Patient") == -1) {

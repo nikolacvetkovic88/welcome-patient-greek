@@ -269,9 +269,11 @@ app.controller('diaryCtrl', function($scope, $rootScope, $window, $q, diaryRepos
     angular.forEach(data, function(value, key) {
       var dates = $scope.parseDates(value);
       angular.forEach(dates, function(date) {
-        var parsedObject = {};
-        parsedObject.title = value.questionnaire;
-        parsedObject.fullTitle = helper.formatDateTimeForUser(date) + " Ερωτηματολόγια " + value.questionnaire;
+        var parsedObject = {},
+            mappedQuestionnaire = $.grep(helper.questionnaireMappings, function(mapping) { return mapping.id == value.id; })[0];
+
+        parsedObject.title = mappedQuestionnaire && mappedQuestionnaire.name || value.questionnaire;
+        parsedObject.fullTitle = helper.formatDateTimeForUser(date) + " Ερωτηματολόγια " + parsedObject.title;
         parsedObject.start = date;
         parsedObject.color = "#3A87AD";
         parsedObject.mode = "questionnaire";
@@ -326,8 +328,8 @@ app.controller('diaryCtrl', function($scope, $rootScope, $window, $q, diaryRepos
 
       angular.forEach(dates, function(date) {
         var parsedObject = {};
-        parsedObject.title = type;
-        parsedObject.fullTitle = helper.formatDateTimeForUser(date) + " Μέτρηση " + type;
+        parsedObject.title = type && type.charAt(0).toUpperCase() + type.substr(1).toLowerCase();
+        parsedObject.fullTitle = helper.formatDateTimeForUser(date) + " Μέτρηση " + parsedObject.title;
         parsedObject.start = date;
         parsedObject.color = "#043248";
         parsedObject.mode = "measurement";
@@ -365,14 +367,15 @@ app.controller('diaryCtrl', function($scope, $rootScope, $window, $q, diaryRepos
       case "measurement":
         location = "patienthub://app";
         message = "Μετάβαση στη μέτρηση";
-      break;
+        break;
       case "questionnaire":
         location = "#questionnaires";
         message = "Μετάβαση στα Ερωτηματολόγια"
-      break;
+        break;
       case "medication":
         location = "#medications";
         message = "Μετάβαση στα Φάρμακα";
+        break;
       default:
         break;
     }
